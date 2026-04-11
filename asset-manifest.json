@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/vijayportfolio/static/css/main.881379d6.css",
+    "main.js": "/vijayportfolio/static/js/main.24ce4c83.js",
+    "static/js/453.352e24a7.chunk.js": "/vijayportfolio/static/js/453.352e24a7.chunk.js",
+    "static/media/hero.jpeg": "/vijayportfolio/static/media/hero.48ad4c00514b8066e71b.jpeg",
+    "static/media/p1.png": "/vijayportfolio/static/media/p1.e8bbb72013b22c989804.png",
+    "static/media/skills.png": "/vijayportfolio/static/media/skills.ee51d4618fa2d2b9a703.png",
+    "static/media/heru.jpg": "/vijayportfolio/static/media/heru.d31c52e192338450a208.jpg",
+    "static/media/contact.png": "/vijayportfolio/static/media/contact.c016e483f7cd80b5e35e.png",
+    "static/media/p3.webp": "/vijayportfolio/static/media/p3.ff51d0c9bcfde252ae6c.webp",
+    "static/media/img1.jpeg": "/vijayportfolio/static/media/img1.28bccf1ef5abcf3d6262.jpeg",
+    "static/media/p6.jpg": "/vijayportfolio/static/media/p6.4e0057ac674116f90a82.jpg",
+    "static/media/p5.png": "/vijayportfolio/static/media/p5.ac9d9d3cee5ba8ba7b26.png",
+    "static/media/p2.jpg": "/vijayportfolio/static/media/p2.37d934c977cd30557f69.jpg",
+    "static/media/p7.jpg": "/vijayportfolio/static/media/p7.4c49e2eafc1d3383c62e.jpg",
+    "index.html": "/vijayportfolio/index.html",
+    "main.881379d6.css.map": "/vijayportfolio/static/css/main.881379d6.css.map",
+    "main.24ce4c83.js.map": "/vijayportfolio/static/js/main.24ce4c83.js.map",
+    "453.352e24a7.chunk.js.map": "/vijayportfolio/static/js/453.352e24a7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.881379d6.css",
+    "static/js/main.24ce4c83.js"
+  ]
+}
