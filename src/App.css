@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Englebert&family=Tangerine:wght@400;700&family=Tilt+Prism&display=swap');
+
+.englebert-regular {
+  font-family: "Englebert", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tangerine-bold {
+  font-family: "Tangerine", cursive !important;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* // <uniquifier>: Use a unique and descriptive class name */
+
+.tilt-prism {
+  font-family: "Tilt Prism" !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "XROT" 0,
+    "YROT" 0;
+}
+
+
+.cookie-regular {
+  font-family: "Cookie", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.CustomColor1 {
+  color: #ACACD0;
+}
+
+html {
+  scroll-behavior: smooth;
+}

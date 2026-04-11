@@ -1,0 +1,96 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0f172a; /* Dark sleek background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.loader-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid transparent;
+}
+
+/* 1st Ring: Cyan - Clockwise */
+.ring-1 {
+  width: 120px;
+  height: 120px;
+  border-top-color: #22d3ee;
+  animation: rotate-right 2s linear infinite;
+}
+
+/* 2nd Ring: Magenta - Anti-clockwise */
+.ring-2 {
+  width: 90px;
+  height: 90px;
+  top: 15px;
+  left: 15px;
+  border-bottom-color: #f472b6;
+  animation: rotate-left 1.5s linear infinite;
+}
+
+/* 3rd Ring: Lime Green - Mid-Left rotation */
+.ring-3 {
+  width: 60px;
+  height: 60px;
+  top: 30px;
+  left: 30px;
+  border-left-color: #a3e635;
+  animation: rotate-mid-left 2.5s ease-in-out infinite;
+}
+
+/* 4th Ring: Amber/Gold - Mid-Right rotation */
+.ring-4 {
+  width: 30px;
+  height: 30px;
+  top: 45px;
+  left: 45px;
+  border-right-color: #fbbf24;
+  animation: rotate-mid-right 1s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes rotate-right {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-left {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes rotate-mid-left {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-180deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes rotate-mid-right {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.loading-text {
+  margin-top: 20px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
