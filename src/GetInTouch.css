@@ -1,0 +1,15 @@
+/* User jo type karega uska color white karne ke liye */
+.MuiInputBase-input {
+    color: #ffffff !important; 
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Multiline (Message field) ke liye specifically */
+textarea.MuiInputBase-input {
+    color: #ffffff !important;
+}
+
+/* Taaki background aur input alag dikhe (optional but helpful) */
+.MuiOutlinedInput-root {
+    background-color: #1e2130 !important;
+}

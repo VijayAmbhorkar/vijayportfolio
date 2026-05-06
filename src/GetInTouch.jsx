@@ -1,14 +1,30 @@
-import React, { useState } from 'react' // 1. Hook add kiya
+import React, { useState } from 'react';
 import './App.css';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 import { Box, TextField, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import confetti from 'canvas-confetti'; // 2. Library import ki
+import confetti from 'canvas-confetti';
+import './GetInTouch.css';
 
-export default function GetInTouch(props) {
-    // 3. State management (sirf data store karne ke liye)
+// Styled component for Dark Theme
+const DarkTextField = styled(TextField)({
+    '& .MuiOutlinedInput-root': {
+        backgroundColor: '#1e2130',
+        borderRadius: '0px',
+        '& fieldset': { border: 'none' },
+        '&:hover fieldset': { border: 'none' },
+        '&.Mui-focused fieldset': { border: '1px solid #ffdb70' },
+    },
+    '& .MuiInputBase-input::placeholder': {
+        color: '#808080',
+        opacity: 1,
+        fontFamily: 'serif',
+    },
+});
+
+export default function GetInTouch() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -21,16 +37,13 @@ export default function GetInTouch(props) {
     };
 
     const handleWhatsAppSend = () => {
-        // Celebration trigger (Website par dikhega redirect se pehle)
         confetti({
             particleCount: 150,
             spread: 70,
             origin: { y: 0.6 }
         });
 
-        const myNumber = "916355540109"; // <-- Apna WhatsApp number yahan likho
-
-        // Message with Emojis (taaki WhatsApp screen par celebration feel aaye)
+        const myNumber = "916355540109";
         const text = `*New Portfolio Message* 🥳%0A%0A` +
             `*Name:* ${formData.name}%0A` +
             `*Email:* ${formData.email}%0A` +
@@ -40,32 +53,15 @@ export default function GetInTouch(props) {
 
         const url = `https://wa.me/${myNumber}?text=${text}`;
 
-        // 1 second ka gap taaki user animation dekh sake
         setTimeout(() => {
             window.open(url, '_blank');
         }, 1000);
     };
 
-    const DarkTextField = styled(TextField)({
-        '& .MuiOutlinedInput-root': {
-            backgroundColor: '#1e2130',
-            color: '#a0a0a0',
-            borderRadius: '0px',
-            '& fieldset': { border: 'none' },
-            '&:hover fieldset': { border: 'none' },
-            '&.Mui-focused fieldset': { border: '1px solid #ffdb70' },
-        },
-        '& .MuiInputBase-input::placeholder': {
-            color: '#808080',
-            opacity: 1,
-            fontFamily: 'serif',
-        },
-    });
-
     return (
         <div id='Contact' style={{ backgroundColor: '#0e1123' }} >
             <br /><br /><br /><br />
-            <div className="" style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center' }}>
                 <Typography
                     variant="h2"
                     component={motion.h2}
@@ -91,49 +87,58 @@ export default function GetInTouch(props) {
                     sx={{ fontSize: '150%', mb: 3 }}
                     className='cookie-regular CustomColor1'
                 >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio.
+                    Feel free to drop a message!
                 </Typography>
             </div>
 
             <Grid container sx={{ width: '90%', margin: 'auto' }}>
-                <Grid size={{ xs: 12, md: 6 }}>
-                    <img src={require('./imgs/contact.png')} style={{ height: '100%', width: '100%' }} alt="" />
+                <Grid item size={{xs:12,md:6}}>
+                    <img src={require('./imgs/contact.png')} style={{ height: '100%', width: '100%', objectFit: 'contain' }} alt="contact" />
                 </Grid>
 
-                <Grid size={{ xs: 12, md: 6 }}>
+                <Grid item size={{xs:12,md:6}}>
                     <Box sx={{ backgroundColor: '#131521', padding: '40px', maxWidth: '800px' }}>
-                        <Grid container spacing={3}>
-                            <Grid item xs={12} sm={6}>
+                        <Grid container spacing={1}>
+                            <Grid item size={{xs:12,md:6}}>
                                 <DarkTextField
                                     fullWidth placeholder="Name" variant="outlined"
-                                    name="name" onChange={handleChange} // Added
+                                    name="name" onChange={handleChange}
+                                    className="white-text-input"
+                                    inputProps={{ style: { color: 'white', fontFamily: 'serif' } }}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{xs:12,md:6}}>
                                 <DarkTextField
                                     fullWidth placeholder="Email" variant="outlined"
-                                    name="email" onChange={handleChange} // Added
+                                    name="email" onChange={handleChange}
+                                    className="white-text-input"
+                                    inputProps={{ style: { color: 'white', fontFamily: 'serif' } }}
                                 />
                             </Grid>
 
-                            <Grid item xs={12}>
+                            <Grid item size={{xs:12,md:6}}>
                                 <DarkTextField
                                     fullWidth placeholder="Subject" variant="outlined"
-                                    name="subject" onChange={handleChange} // Added
+                                    name="subject" onChange={handleChange}
+                                    className="white-text-input"
+                                    inputProps={{ style: { color: 'white', fontFamily: 'serif' } }}
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item size={{xs:12,md:6}}>
                                 <DarkTextField
                                     fullWidth placeholder="Your Message" variant="outlined"
                                     multiline rows={6}
-                                    name="message" onChange={handleChange} // Added
+                                    name="message" onChange={handleChange}
+                                    className="white-text-input"
+                                    // Multiline ke liye sx prop zyada powerfull hai
+                                    sx={{ "& .MuiInputBase-input": { color: "white !important" } }}
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item size={{xs:12,md:6}}>
                                 <Button
                                     fullWidth
                                     variant="contained"
-                                    onClick={handleWhatsAppSend} // Logic Trigger
+                                    onClick={handleWhatsAppSend}
                                     sx={{
                                         backgroundColor: '#ffdb70',
                                         color: '#131521',
@@ -154,6 +159,6 @@ export default function GetInTouch(props) {
                 </Grid>
             </Grid>
             <br /><br />
-        </div >
-    )
+        </div>
+    );
 }
